@@ -1,11 +1,14 @@
 import express from "express";
+import dotenv from "dotenv";
+dotenv.config();
 import products from "./data/products.js";
-const port = 5000;
+
+const port = process.env.PORT || 5000;
 
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("API is running using nodemon...");
+  res.send("API is running using...");
 });
 
 app.get("/api/products", (req, res) => {
